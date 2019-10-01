@@ -10,6 +10,9 @@ import UIKit
 
 class LanguageSelectionViewController: UIViewController {
     
+    let buttonWidth = 150
+    let buttonHeight = 50
+    
     let background: UIImageView = {
         var imageView = UIImageView()
         imageView.image = UIImage(named: "bg_main")
@@ -29,7 +32,7 @@ class LanguageSelectionViewController: UIViewController {
         var button = UIButton()
         let image = UIImage(named: "button_bg_arabic")
         button.setImage(image, for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = true
+        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
@@ -48,18 +51,18 @@ class LanguageSelectionViewController: UIViewController {
         // Adding the English button
         view.addSubview(englishButton)
         NSLayoutConstraint.activate([
-            englishButton.widthAnchor.constraint(equalToConstant: 120),
-            englishButton.heightAnchor.constraint(equalToConstant: 40),
+            englishButton.widthAnchor.constraint(equalToConstant: CGFloat(buttonWidth)),
+            englishButton.heightAnchor.constraint(equalToConstant: CGFloat(buttonHeight)),
             englishButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 500),
-            englishButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 100)])
+            englishButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50)])
         
         // Adding the Arabic button
         view.addSubview(arabicButton)
         NSLayoutConstraint.activate([
-            arabicButton.widthAnchor.constraint(equalToConstant: 120),
-            arabicButton.heightAnchor.constraint(equalToConstant: 40),
-            arabicButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 500),
-            arabicButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 100)])
+            arabicButton.widthAnchor.constraint(equalToConstant: CGFloat(buttonWidth)),
+            arabicButton.heightAnchor.constraint(equalToConstant: CGFloat(buttonHeight)),
+            arabicButton.topAnchor.constraint(equalTo: englishButton.topAnchor),
+            arabicButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50)])
     }
 
     override func viewDidLoad() {
