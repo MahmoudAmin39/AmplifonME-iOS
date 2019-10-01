@@ -18,9 +18,8 @@ class LanguageSelectionViewController: UIViewController {
     }()
     
     let englishButton: UIButton = {
-        let frames = CGRect(x: 0, y: 0, width: 120, height: 40)
         let image = UIImage(named: "button_bg_english")
-        var button = UIButton(frame: frames)
+        var button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(image, for: .normal)
         return button
@@ -51,8 +50,16 @@ class LanguageSelectionViewController: UIViewController {
         NSLayoutConstraint.activate([
             englishButton.widthAnchor.constraint(equalToConstant: 120),
             englishButton.heightAnchor.constraint(equalToConstant: 40),
-            englishButton.topAnchor.constraint(equalToSystemSpacingBelow: background.topAnchor, multiplier: 100),
-            englishButton.leadingAnchor.constraint(equalToSystemSpacingAfter: background.leadingAnchor, multiplier: 100)])
+            englishButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 500),
+            englishButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 100)])
+        
+        // Adding the Arabic button
+        view.addSubview(arabicButton)
+        NSLayoutConstraint.activate([
+            arabicButton.widthAnchor.constraint(equalToConstant: 120),
+            arabicButton.heightAnchor.constraint(equalToConstant: 40),
+            arabicButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 500),
+            arabicButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 100)])
     }
 
     override func viewDidLoad() {
