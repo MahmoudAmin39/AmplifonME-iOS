@@ -43,10 +43,10 @@ class LanguageSelectionViewController: UIViewController {
         // Adding the background image
         view.addSubview(background)
         NSLayoutConstraint.activate([
-            background.topAnchor.constraint(equalToSystemSpacingBelow: view.topAnchor, multiplier: 0),
-            background.bottomAnchor.constraint(equalToSystemSpacingBelow: view.bottomAnchor, multiplier: 0),
-            background.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 0),
-            background.trailingAnchor.constraint(equalToSystemSpacingAfter: view.trailingAnchor, multiplier: 0)])
+            background.topAnchor.constraint(equalTo: view.topAnchor),
+            background.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            background.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            background.trailingAnchor.constraint(equalTo: view.trailingAnchor)])
         
         // Adding the English button
         view.addSubview(englishButton)
@@ -54,7 +54,7 @@ class LanguageSelectionViewController: UIViewController {
             englishButton.widthAnchor.constraint(equalToConstant: CGFloat(buttonWidth)),
             englishButton.heightAnchor.constraint(equalToConstant: CGFloat(buttonHeight)),
             englishButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 500),
-            englishButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50)])
+            englishButton.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: -25)])
         
         // Adding the Arabic button
         view.addSubview(arabicButton)
@@ -62,7 +62,7 @@ class LanguageSelectionViewController: UIViewController {
             arabicButton.widthAnchor.constraint(equalToConstant: CGFloat(buttonWidth)),
             arabicButton.heightAnchor.constraint(equalToConstant: CGFloat(buttonHeight)),
             arabicButton.topAnchor.constraint(equalTo: englishButton.topAnchor),
-            arabicButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50)])
+            arabicButton.leadingAnchor.constraint(equalTo: view.centerXAnchor, constant: 25)])
     }
 
     override func viewDidLoad() {
