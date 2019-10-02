@@ -25,6 +25,7 @@ class LanguageSelectionViewController: UIViewController {
         var button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(image, for: .normal)
+        button.addTarget(self, action: #selector(englishSelected), for: .touchUpInside)
         return button
     }()
     
@@ -33,6 +34,7 @@ class LanguageSelectionViewController: UIViewController {
         let image = UIImage(named: "button_bg_arabic")
         button.setImage(image, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(arabicSelected), for: .touchUpInside)
         return button
     }()
     
@@ -68,5 +70,21 @@ class LanguageSelectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = true
+    }
+    
+    @objc func englishSelected() {
+        selected(language: "en")
+    }
+    
+    @objc func arabicSelected() {
+        selected(language: "ar")
+    }
+    
+    func selected(language code: String) {
+        UserDefaults.standard.set(code, forKey: "SelectedLanguage")
+        navigationController?.pushViewController(RegistrationViewController(), animated: true)
+    }
 }
-

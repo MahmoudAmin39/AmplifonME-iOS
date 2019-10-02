@@ -19,7 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         guard let window = self.window else {
             fatalError("No Window found")
         }
-        window.rootViewController = LanguageSelectionViewController()
+        let rootVC = UINavigationController(rootViewController: LanguageSelectionViewController())
+        window.rootViewController = rootVC
         window.makeKeyAndVisible()
         return true
     }
