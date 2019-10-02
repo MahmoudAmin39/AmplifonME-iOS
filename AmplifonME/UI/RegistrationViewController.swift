@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RegistrationViewController: BackgroundViewController {
+class RegistrationViewController: RegistrationBackgroundViewController {
     
     override func loadView() {
         super.loadView()
