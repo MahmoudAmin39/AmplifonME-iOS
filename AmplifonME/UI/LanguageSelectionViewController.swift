@@ -76,6 +76,8 @@ class LanguageSelectionViewController: BackgroundViewController {
     
     func selected(language code: String) {
         UserDefaults.standard.set(code, forKey: "SelectedLanguage")
-        navigationController?.pushViewController(RegistrationViewController(), animated: true)
+        let registrationVC = RegistrationViewController()
+        registrationVC.imageName = "image_user"
+        navigationController?.pushViewController(registrationVC, animated: true)
     }
 }
