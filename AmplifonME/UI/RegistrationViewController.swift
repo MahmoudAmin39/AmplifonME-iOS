@@ -20,6 +20,7 @@ class RegistrationViewController: RegistrationBackgroundViewController {
     
     let loginLabel: UILabel = {
         var label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Login"
         label.textColor = .black
         return label
@@ -27,10 +28,15 @@ class RegistrationViewController: RegistrationBackgroundViewController {
     
     override func loadView() {
         super.loadView()
+        // Adding the Login label
+        view.addSubview(loginLabel)
+        NSLayoutConstraint.activate([
+            loginLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 96),
+            loginLabel.leadingAnchor.constraint(equalTo: boxImageView.leadingAnchor, constant: 32)])
         // Adding the Registration button
         view.addSubview(registrationButton)
         NSLayoutConstraint.activate([registrationButton.topAnchor.constraint(equalTo: boxImageView.topAnchor, constant: 400),
-            registrationButton.leadingAnchor.constraint(equalTo: boxImageView.leadingAnchor, constant: 32),
+            registrationButton.leadingAnchor.constraint(equalTo: loginLabel.leadingAnchor),
             registrationButton.trailingAnchor.constraint(equalTo: boxImageView.trailingAnchor, constant: -32),
             registrationButton.heightAnchor.constraint(equalToConstant: 56)])
     }
