@@ -8,15 +8,13 @@
 
 import UIKit
 
-class RegistrationViewController: UIViewController {
+class RegistrationViewController: BackgroundViewController {
     
     override func loadView() {
-        view = UIView()
-        view.backgroundColor = .white
+        super.loadView()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.isHidden = false
     }
 }
