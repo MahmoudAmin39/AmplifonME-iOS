@@ -13,6 +13,13 @@ class LanguageSelectionViewController: BackgroundViewController {
     let buttonWidth = 150
     let buttonHeight = 50
     
+    let logoImageView: UIImageView = {
+        var imageView = UIImageView()
+        imageView.image = UIImage(named: "logo_big")
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
     let englishButton: UIButton = {
         let image = UIImage(named: "button_bg_english")
         var button = UIButton()
@@ -33,13 +40,19 @@ class LanguageSelectionViewController: BackgroundViewController {
     
     override func loadView() {
         super.loadView()
+        // Adding the Logo ImageView
+        view.addSubview(logoImageView)
+        NSLayoutConstraint.activate([logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            logoImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 300)])
+        
         // Adding the English button
         view.addSubview(englishButton)
         NSLayoutConstraint.activate([
             englishButton.widthAnchor.constraint(equalToConstant: CGFloat(buttonWidth)),
             englishButton.heightAnchor.constraint(equalToConstant: CGFloat(buttonHeight)),
-            englishButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 500),
+            englishButton.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 175),
             englishButton.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: -25)])
+        
         // Adding the Arabic button
         view.addSubview(arabicButton)
         NSLayoutConstraint.activate([
