@@ -10,6 +10,7 @@
 		1ECFE8A123448EB300A058EE /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECFE8A023448EB300A058EE /* RegistrationViewController.swift */; };
 		1EE5FE5D234492C100A72A0A /* BackgroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE5FE5C234492C100A72A0A /* BackgroundViewController.swift */; };
 		1EE6AF132344A9C7002FCC68 /* RegistrationBackgroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE6AF122344A9C7002FCC68 /* RegistrationBackgroundViewController.swift */; };
+		1EF10FCC2344C32F0093160F /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF10FCB2344C32F0093160F /* OTPViewController.swift */; };
 		1EF171C023436EBD003B7EB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF171BF23436EBD003B7EB9 /* AppDelegate.swift */; };
 		1EF171C223436EBD003B7EB9 /* LanguageSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF171C123436EBD003B7EB9 /* LanguageSelectionViewController.swift */; };
 		1EF171C823436EBD003B7EB9 /* AmplifonME.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1EF171C623436EBD003B7EB9 /* AmplifonME.xcdatamodeld */; };
@@ -21,6 +22,7 @@
 		1ECFE8A023448EB300A058EE /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		1EE5FE5C234492C100A72A0A /* BackgroundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundViewController.swift; sourceTree = "<group>"; };
 		1EE6AF122344A9C7002FCC68 /* RegistrationBackgroundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationBackgroundViewController.swift; sourceTree = "<group>"; };
+		1EF10FCB2344C32F0093160F /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
 		1EF171BC23436EBD003B7EB9 /* AmplifonME.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AmplifonME.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EF171BF23436EBD003B7EB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1EF171C123436EBD003B7EB9 /* LanguageSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSelectionViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +49,7 @@
 				1EE6AF142344A9E2002FCC68 /* abstract */,
 				1ECFE8A023448EB300A058EE /* RegistrationViewController.swift */,
 				1EF171C123436EBD003B7EB9 /* LanguageSelectionViewController.swift */,
+				1EF10FCB2344C32F0093160F /* OTPViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 				1EE5FE5D234492C100A72A0A /* BackgroundViewController.swift in Sources */,
 				1ECFE8A123448EB300A058EE /* RegistrationViewController.swift in Sources */,
 				1EF171C023436EBD003B7EB9 /* AppDelegate.swift in Sources */,
+				1EF10FCC2344C32F0093160F /* OTPViewController.swift in Sources */,
 				1EE6AF132344A9C7002FCC68 /* RegistrationBackgroundViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

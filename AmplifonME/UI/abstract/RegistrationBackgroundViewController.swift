@@ -29,7 +29,7 @@ class RegistrationBackgroundViewController: BackgroundViewController {
         super.loadView()
         // Adding the box view
         view.addSubview(boxImageView)
-        NSLayoutConstraint.activate([boxImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 146),             boxImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -146),
+        NSLayoutConstraint.activate([boxImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 146),             boxImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -184),
              boxImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
              boxImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24)])
         
