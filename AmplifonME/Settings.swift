@@ -12,7 +12,7 @@ struct Settings {
     
     static var shared = Settings()
     
-    var appLanguage: String = "en"
+    var appLanguage: String
     
     init() {
         self.appLanguage = UserDefaults.standard.string(forKey: "SelectedLanguage") ?? "en"

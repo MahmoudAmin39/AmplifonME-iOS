@@ -15,15 +15,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        guard let window = self.window else {
-            fatalError("No Window found")
-        }
+        // Get the app language
         let appLanguage = Settings.shared.appLanguage
         if appLanguage == "ar" {
             UIView.appearance().semanticContentAttribute = .forceRightToLeft
         } else {
             UIView.appearance().semanticContentAttribute = .forceLeftToRight
+        }
+        // Create the window
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        guard let window = self.window else {
+            fatalError("No Window found")
         }
         let rootVC = UINavigationController(rootViewController: LanguageSelectionViewController())
         window.rootViewController = rootVC
