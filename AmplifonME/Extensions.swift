@@ -9,8 +9,8 @@
 import Foundation
 
 extension String {
-    func localized(_ lang:String) ->String {
-        let path = Bundle.main.path(forResource: lang, ofType: "lproj")
+    func localized() ->String {
+        let path = Bundle.main.path(forResource: Settings.shared.appLanguage, ofType: "lproj")
         let bundle = Bundle(path: path!)
         return NSLocalizedString(self, tableName: nil, bundle: bundle!, value: "", comment: "")
     }
