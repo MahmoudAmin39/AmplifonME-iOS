@@ -21,7 +21,7 @@ class RegistrationViewController: RegistrationBackgroundViewController {
     let loginLabel: UILabel = {
         var label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Login"
+        label.text = "Login".localized(Settings.shared.appLanguage)
         label.textColor = .black
         return label
     }()

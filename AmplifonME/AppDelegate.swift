@@ -19,6 +19,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         guard let window = self.window else {
             fatalError("No Window found")
         }
+        let appLanguage = Settings.shared.appLanguage
+        if appLanguage == "ar" {
+            UIView.appearance().semanticContentAttribute = .forceRightToLeft
+        } else {
+            UIView.appearance().semanticContentAttribute = .forceLeftToRight
+        }
         let rootVC = UINavigationController(rootViewController: LanguageSelectionViewController())
         window.rootViewController = rootVC
         window.makeKeyAndVisible()
