@@ -7,12 +7,21 @@
 //
 
 import Foundation
+import UIKit
 
 struct Settings {
     
     static var shared = Settings()
     
-    var appLanguage: String
+    var appLanguage: String {
+        didSet {
+            if appLanguage == "ar" {
+                UIView.appearance().semanticContentAttribute = .forceRightToLeft
+            } else if appLanguage == "en" {
+                UIView.appearance().semanticContentAttribute = .forceLeftToRight
+            }
+        }
+    }
     
     init() {
         self.appLanguage = UserDefaults.standard.string(forKey: "SelectedLanguage") ?? "en"

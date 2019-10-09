@@ -68,12 +68,10 @@ class LanguageSelectionViewController: BackgroundViewController {
 
     @objc func englishSelected() {
         selected(language: "en")
-        UIView.appearance().semanticContentAttribute = .forceLeftToRight
     }
     
     @objc func arabicSelected() {
         selected(language: "ar")
-        UIView.appearance().semanticContentAttribute = .forceRightToLeft
     }
     
     func selected(language code: String) {
