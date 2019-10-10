@@ -10,7 +10,7 @@ import UIKit
 
 class RegistrationViewController: RegistrationBackgroundViewController {
     
-    let registrationButton: UIButton = {
+    lazy var registrationButton: UIButton = {
         var button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(named: "button_registration"), for: .normal)
@@ -18,7 +18,7 @@ class RegistrationViewController: RegistrationBackgroundViewController {
         return button
     }()
     
-    let loginLabel: UILabel = {
+    lazy var loginLabel: UILabel = {
         var label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Login".localized()
@@ -26,7 +26,7 @@ class RegistrationViewController: RegistrationBackgroundViewController {
         return label
     }()
     
-    let phoneNumberText: UITextField = {
+    lazy var phoneNumberText: UITextField = {
         var textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         if Settings.shared.appLanguage == "ar" {
@@ -41,7 +41,7 @@ class RegistrationViewController: RegistrationBackgroundViewController {
         return textField
     }()
     
-    let textLabel: UILabel = {
+    lazy var textLabel: UILabel = {
         var textLabel = UILabel()
         textLabel.translatesAutoresizingMaskIntoConstraints = false
         textLabel.textColor = UIColor(named: "jungle_green")
@@ -49,14 +49,15 @@ class RegistrationViewController: RegistrationBackgroundViewController {
         return textLabel
     }()
     
-    let guestLabelButton: UIButton = {
-        var button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("guestLogin".localized(), for: .normal)
-        button.setTitleColor(UIColor(named: "jazzberry_jam"), for: .normal)
-        button.addTarget(self, action: #selector(goToHome), for: .touchUpInside)
-        button.backgroundColor = .white
-        return button
+    lazy var guestLabel: UILabel = {
+        var label = UILabel()
+        label.text = "guestLogin".localized()
+        label.textColor = UIColor(named: "jazzberry_jam")
+        var gesture = UITapGestureRecognizer(target: self, action: #selector(goToHome))
+        gesture.numberOfTapsRequired = 1
+        label.isUserInteractionEnabled = true
+        label.addGestureRecognizer(gesture)
+        return label
     }()
 
     override func loadView() {
@@ -79,7 +80,7 @@ class RegistrationViewController: RegistrationBackgroundViewController {
             registrationButton.trailingAnchor.constraint(equalTo: phoneNumberText.trailingAnchor),
             registrationButton.heightAnchor.constraint(equalToConstant: 56)])
         // Adding the StackView
-        let stackView = UIStackView(arrangedSubviews: [textLabel, guestLabelButton])
+        let stackView = UIStackView(arrangedSubviews: [textLabel, guestLabel])
         stackView.setCustomSpacing(CGFloat(integerLiteral: 4), after: textLabel)
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.isUserInteractionEnabled = true

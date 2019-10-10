@@ -10,7 +10,7 @@ import UIKit
 
 class BackgroundViewController: UIViewController {
     
-    let background: UIImageView = {
+    lazy var background: UIImageView = {
         var imageView = UIImageView()
         imageView.image = UIImage(named: "bg_main")
         imageView.translatesAutoresizingMaskIntoConstraints = false

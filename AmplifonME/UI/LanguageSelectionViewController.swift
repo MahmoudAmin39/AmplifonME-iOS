@@ -13,14 +13,14 @@ class LanguageSelectionViewController: BackgroundViewController {
     let buttonWidth = 150
     let buttonHeight = 50
     
-    let logoImageView: UIImageView = {
+    lazy var logoImageView: UIImageView = {
         var imageView = UIImageView()
         imageView.image = UIImage(named: "logo_big")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
-    let englishButton: UIButton = {
+    lazy var englishButton: UIButton = {
         let image = UIImage(named: "button_bg_english")
         var button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -29,7 +29,7 @@ class LanguageSelectionViewController: BackgroundViewController {
         return button
     }()
     
-    let arabicButton: UIButton = {
+    lazy var arabicButton: UIButton = {
         var button = UIButton()
         let image = UIImage(named: "button_bg_arabic")
         button.setImage(image, for: .normal)

@@ -12,14 +12,14 @@ class RegistrationBackgroundViewController: BackgroundWithLogoViewController {
     
     var imageName: String?
     
-    let boxImageView: UIImageView = {
+    lazy var boxImageView: UIImageView = {
         var imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(named: "bg_login")
         return imageView
     }()
     
-    var imageView: UIImageView = {
+    lazy var imageView: UIImageView = {
         var imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView

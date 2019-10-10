@@ -10,7 +10,7 @@ import UIKit
 
 class BackgroundWithLogoViewController: BackgroundViewController {
     
-    let logoImageView: UIImageView = {
+    lazy var logoImageView: UIImageView = {
         var imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = UIImage(named: "logo_small")
