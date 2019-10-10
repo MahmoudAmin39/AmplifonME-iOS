@@ -61,9 +61,10 @@ class RegistrationViewController: RegistrationBackgroundViewController {
     
     @objc func register() {
         do {
-            try checkPhoneNumber()
+            let phoneNumber = try checkPhoneNumber()
             let otpVC = OTPViewController()
             otpVC.imageName = "image_verify"
+            otpVC.phoneNumber = phoneNumber
             navigationController?.pushViewController(otpVC, animated: true)
         } catch let error {
             var message = ""
@@ -84,7 +85,7 @@ class RegistrationViewController: RegistrationBackgroundViewController {
         }
     }
     
-    func checkPhoneNumber() throws {
+    func checkPhoneNumber() throws -> String {
         if let phoneNumber = phoneNumberText.text {
             guard Int(phoneNumber) != nil else {
                 throw PhoneNumberError.notANumber
@@ -93,9 +94,12 @@ class RegistrationViewController: RegistrationBackgroundViewController {
                 throw PhoneNumberError.notElevenDigits
             }
             let firstThreeDigits = phoneNumber.prefix(3).description
-            if firstThreeDigits != "010" || firstThreeDigits != "011" || firstThreeDigits != "012" || firstThreeDigits != "015" {
+            if !(firstThreeDigits == "010" || firstThreeDigits == "011" || firstThreeDigits == "012" || firstThreeDigits == "015") {
                 throw PhoneNumberError.firstThreeDigitsWrong
             }
+            return phoneNumber
+        } else {
+            throw PhoneNumberError.notANumber
         }
     }
 }

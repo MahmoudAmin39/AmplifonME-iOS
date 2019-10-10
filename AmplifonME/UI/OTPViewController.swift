@@ -10,6 +10,8 @@ import UIKit
 
 class OTPViewController: RegistrationBackgroundViewController {
     
+    var phoneNumber: String?
+    
     override func loadView() {
         super.loadView()
     }
