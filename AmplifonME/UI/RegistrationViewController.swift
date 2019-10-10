@@ -41,6 +41,13 @@ class RegistrationViewController: RegistrationBackgroundViewController {
         return textField
     }()
     
+    let logoImageView: UIImageView = {
+        var imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage(named: "logo_small")
+        return imageView
+    }()
+    
     override func loadView() {
         super.loadView()
         // Adding the Login label
@@ -60,6 +67,12 @@ class RegistrationViewController: RegistrationBackgroundViewController {
             registrationButton.leadingAnchor.constraint(equalTo: phoneNumberText.leadingAnchor),
             registrationButton.trailingAnchor.constraint(equalTo: phoneNumberText.trailingAnchor),
             registrationButton.heightAnchor.constraint(equalToConstant: 56)])
+        // Adding the logo imageView
+        view.addSubview(logoImageView)
+        NSLayoutConstraint.activate([logoImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -28),
+            logoImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30),
+            logoImageView.widthAnchor.constraint(equalToConstant: 128),
+            logoImageView.heightAnchor.constraint(equalToConstant: 30)])
     }
 
     override func viewDidLoad() {
