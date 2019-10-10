@@ -60,8 +60,48 @@ class RegistrationViewController: RegistrationBackgroundViewController {
     }
     
     @objc func register() {
-        let otpVC = OTPViewController()
-        otpVC.imageName = "image_verify"
-        navigationController?.pushViewController(otpVC, animated: true)
+        do {
+            try checkPhoneNumber()
+            let otpVC = OTPViewController()
+            otpVC.imageName = "image_verify"
+            navigationController?.pushViewController(otpVC, animated: true)
+        } catch let error {
+            var message = ""
+            if let error = error as? PhoneNumberError {
+                switch error {
+                case .notANumber:
+                    message = "notANumber".localized()
+                case .firstThreeDigitsWrong:
+                    message = "firstThreeDigitsWrong".localized()
+                case .notElevenDigits:
+                    message = "notElevenDigits".localized()
+                }
+            }
+            let alertViewController  = UIAlertController(title: "Error".localized(), message: message, preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "Ok".localized(), style: .default)
+            alertViewController.addAction(alertAction)
+            present(alertViewController, animated: true, completion: nil)
+        }
     }
+    
+    func checkPhoneNumber() throws {
+        if let phoneNumber = phoneNumberText.text {
+            guard Int(phoneNumber) != nil else {
+                throw PhoneNumberError.notANumber
+            }
+            if phoneNumber.count != 11 {
+                throw PhoneNumberError.notElevenDigits
+            }
+            let firstThreeDigits = phoneNumber.prefix(3).description
+            if firstThreeDigits != "010" || firstThreeDigits != "011" || firstThreeDigits != "012" || firstThreeDigits != "015" {
+                throw PhoneNumberError.firstThreeDigitsWrong
+            }
+        }
+    }
+}
+
+enum PhoneNumberError: Error {
+    case notANumber
+    case firstThreeDigitsWrong
+    case notElevenDigits
 }

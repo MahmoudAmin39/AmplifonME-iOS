@@ -8,3 +8,7 @@
 
 "Login" = "Login";
 "Phone_No" = "Phone Number";
+"Error" = "Error";
+"notANumber" = "Please enter a valid Phone number";
+"firstThreeDigitsWrong" = "The phone number must start with 010, 011, 012 or 015";
+"notElevenDigits" = "The phone number must be 11 digits";
