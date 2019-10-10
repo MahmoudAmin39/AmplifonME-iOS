@@ -10,6 +10,7 @@
 		1E46C131234B5C510067BF1E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1E46C133234B5C510067BF1E /* Localizable.strings */; };
 		1E46C136234B616E0067BF1E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E46C135234B616E0067BF1E /* Extensions.swift */; };
 		1E46C138234B61E10067BF1E /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E46C137234B61E10067BF1E /* Settings.swift */; };
+		1EAAF9FA234F5769002840E8 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EAAF9F9234F5769002840E8 /* Colors.xcassets */; };
 		1ECFE8A123448EB300A058EE /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECFE8A023448EB300A058EE /* RegistrationViewController.swift */; };
 		1EE5FE5D234492C100A72A0A /* BackgroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE5FE5C234492C100A72A0A /* BackgroundViewController.swift */; };
 		1EE6AF132344A9C7002FCC68 /* RegistrationBackgroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE6AF122344A9C7002FCC68 /* RegistrationBackgroundViewController.swift */; };
@@ -26,6 +27,7 @@
 		1E46C134234B5C7A0067BF1E /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1E46C135234B616E0067BF1E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		1E46C137234B61E10067BF1E /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		1EAAF9F9234F5769002840E8 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		1ECFE8A023448EB300A058EE /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		1EE5FE5C234492C100A72A0A /* BackgroundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundViewController.swift; sourceTree = "<group>"; };
 		1EE6AF122344A9C7002FCC68 /* RegistrationBackgroundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationBackgroundViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				1E46C133234B5C510067BF1E /* Localizable.strings */,
 				1E46C135234B616E0067BF1E /* Extensions.swift */,
 				1E46C137234B61E10067BF1E /* Settings.swift */,
+				1EAAF9F9234F5769002840E8 /* Colors.xcassets */,
 			);
 			path = AmplifonME;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1EF171CD23436EC7003B7EB9 /* LaunchScreen.storyboard in Resources */,
+				1EAAF9FA234F5769002840E8 /* Colors.xcassets in Resources */,
 				1EF171CA23436EC7003B7EB9 /* Assets.xcassets in Resources */,
 				1E46C131234B5C510067BF1E /* Localizable.strings in Resources */,
 			);

@@ -22,14 +22,21 @@ class RegistrationViewController: RegistrationBackgroundViewController {
         var label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Login".localized()
-        label.textColor = .black
+        label.textColor = UIColor(named: "jazzberry_jam")
         return label
     }()
     
     let phoneNumberText: UITextField = {
         var textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.placeholder = "Phone_No".localized()
+        if Settings.shared.appLanguage == "ar" {
+            textField.textAlignment = NSTextAlignment.right
+        } else if Settings.shared.appLanguage == "en" {
+            textField.textAlignment = NSTextAlignment.left
+        }
+        let attributedPlaceholder = NSAttributedString(string: "Phone_No".localized(), attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "jazzberry_jam") ?? .red])
+        textField.attributedPlaceholder = attributedPlaceholder
+        textField.textColor = UIColor(named: "jazzberry_jam")
         textField.background = UIImage(named: "bg_text_field")
         return textField
     }()
