@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RegistrationBackgroundViewController: BackgroundViewController {
+class RegistrationBackgroundViewController: BackgroundWithLogoViewController {
     
     var imageName: String?
     
