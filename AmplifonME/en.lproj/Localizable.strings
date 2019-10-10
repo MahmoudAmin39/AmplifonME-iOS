@@ -12,3 +12,5 @@
 "notANumber" = "Please enter a valid Phone number";
 "firstThreeDigitsWrong" = "The phone number must start with 010, 011, 012 or 015";
 "notElevenDigits" = "The phone number must be 11 digits";
+"notAmember" = "Not a member?";
+"guestLogin" = "Login as a guest";

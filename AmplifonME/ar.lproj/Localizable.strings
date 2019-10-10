@@ -11,3 +11,5 @@
 "notANumber" = "من فضلك قم بادخال رقم صحيح";
 "firstThreeDigitsWrong" = "رقم الهاتف لابد أن يبدأ ب ٠١٠ أو ٠١١ أو ٠١٢ أو ٠١٥";
 "notElevenDigits" = "رقم الهاتف لابد أن يتكون من ١١ رقم";
+"notAmember" = "لست مشترك؟";
+"guestLogin" = "دخول ك زائر";

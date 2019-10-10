@@ -40,6 +40,27 @@ class RegistrationViewController: RegistrationBackgroundViewController {
         textField.background = UIImage(named: "bg_text_field")
         return textField
     }()
+    
+    let textLabel: UILabel = {
+        var textLabel = UILabel()
+        textLabel.translatesAutoresizingMaskIntoConstraints = false
+        textLabel.textColor = UIColor(named: "jungle_green")
+        textLabel.text = "notAmember".localized()
+        return textLabel
+    }()
+    
+    let guestTextLabel: UILabel = {
+        var textLabel = UILabel()
+        textLabel.translatesAutoresizingMaskIntoConstraints = false
+        textLabel.text = "guestLogin".localized()
+        textLabel.textColor = UIColor(named: "jazzberry_jam")
+        // Register Tap event
+        textLabel.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(goToHome))
+        tapGesture.numberOfTapsRequired = 1
+        textLabel.addGestureRecognizer(tapGesture)
+        return textLabel
+    }()
 
     override func loadView() {
         super.loadView()
@@ -60,6 +81,14 @@ class RegistrationViewController: RegistrationBackgroundViewController {
             registrationButton.leadingAnchor.constraint(equalTo: phoneNumberText.leadingAnchor),
             registrationButton.trailingAnchor.constraint(equalTo: phoneNumberText.trailingAnchor),
             registrationButton.heightAnchor.constraint(equalToConstant: 56)])
+        // Adding the StackView
+        let stackView = UIStackView(arrangedSubviews: [textLabel, guestTextLabel])
+        stackView.setCustomSpacing(CGFloat(integerLiteral: 4), after: textLabel)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.isUserInteractionEnabled = true
+        view.addSubview(stackView)
+        NSLayoutConstraint.activate([stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            stackView.topAnchor.constraint(equalTo: registrationButton.bottomAnchor, constant: 100)])
     }
 
     override func viewDidLoad() {
@@ -108,6 +137,11 @@ class RegistrationViewController: RegistrationBackgroundViewController {
         } else {
             throw PhoneNumberError.notANumber
         }
+    }
+    
+    @objc func goToHome() {
+        print("Label pressed")
+        navigationController?.pushViewController(BackgroundWithLogoViewController(), animated: true)
     }
 }
 
