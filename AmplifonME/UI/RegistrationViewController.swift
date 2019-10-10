@@ -49,17 +49,14 @@ class RegistrationViewController: RegistrationBackgroundViewController {
         return textLabel
     }()
     
-    let guestTextLabel: UILabel = {
-        var textLabel = UILabel()
-        textLabel.translatesAutoresizingMaskIntoConstraints = false
-        textLabel.text = "guestLogin".localized()
-        textLabel.textColor = UIColor(named: "jazzberry_jam")
-        // Register Tap event
-        textLabel.isUserInteractionEnabled = true
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(goToHome))
-        tapGesture.numberOfTapsRequired = 1
-        textLabel.addGestureRecognizer(tapGesture)
-        return textLabel
+    let guestLabelButton: UIButton = {
+        var button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("guestLogin".localized(), for: .normal)
+        button.setTitleColor(UIColor(named: "jazzberry_jam"), for: .normal)
+        button.addTarget(self, action: #selector(goToHome), for: .touchUpInside)
+        button.backgroundColor = .white
+        return button
     }()
 
     override func loadView() {
@@ -82,7 +79,7 @@ class RegistrationViewController: RegistrationBackgroundViewController {
             registrationButton.trailingAnchor.constraint(equalTo: phoneNumberText.trailingAnchor),
             registrationButton.heightAnchor.constraint(equalToConstant: 56)])
         // Adding the StackView
-        let stackView = UIStackView(arrangedSubviews: [textLabel, guestTextLabel])
+        let stackView = UIStackView(arrangedSubviews: [textLabel, guestLabelButton])
         stackView.setCustomSpacing(CGFloat(integerLiteral: 4), after: textLabel)
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.isUserInteractionEnabled = true
@@ -140,7 +137,6 @@ class RegistrationViewController: RegistrationBackgroundViewController {
     }
     
     @objc func goToHome() {
-        print("Label pressed")
         navigationController?.pushViewController(BackgroundWithLogoViewController(), animated: true)
     }
 }
